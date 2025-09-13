@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import './index.css'; 
+import './index.css';
+import logo_psg from '../src/images/imagem_psg.png'; 
+ 
 // Componente para a Página Home
 const HomePage = ({ onNavigate }) => (
   <main className="container mx-auto mt-10 px-6 py-20 text-center">
@@ -34,31 +36,70 @@ const AboutPage = () => (
 
 // Componente para a Página de Jogos
 const GamesPage = () => (
-  <main className="container mx-auto mt-10 px-6 py-10">
-    <h1 className="text-4xl font-bold text-gray-800 mb-8">Próximos Jogos</h1>
-    
-    <div className="bg-white p-6 rounded-lg shadow-md mb-6 flex flex-col md:flex-row justify-between items-center">
-      <div className="text-center md:text-left mb-4 md:mb-0">
-        <h2 className="text-2xl font-bold text-gray-900">Time A vs. Time B</h2>
-        <p className="text-gray-600 text-lg">Campeonato Brasileiro</p>
-        <p className="text-gray-500 text-sm">Sábado, 28 de Setembro, 16:00h</p>
-      </div>
-      <div className="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full">
-        Ao Vivo
-      </div>
+  <>
+  <header className='flex justify-center bg-[#5e3b63] text-white p-10'>
+    <h1 className='font-sans text-5xl'>Jogos</h1>
+  </header>
+  <main className='grid grid-cols-12 gap-4 p-10 bg-[#598819]'>
+    <div className='p-8 rounded-lg shadow-md col-span-4 col-start-5 flex flex-col justify-center items-center bg-[#a74e67]'>
+      <p className='font-sans text-2xl '>JOGO 1</p>
+      <br/>
+      <p>00/00/0000</p> 
+      <p>00:00</p>
+      <p>LOCAL</p> 
+      <div className='display flex gap-5 mt-4'>   
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+        <p className='text-2xl font-bold mt-20'>X</p>
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+      </div>          
     </div>
-    
-    <div className="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row justify-between items-center">
-      <div className="text-center md:text-left mb-4 md:mb-0">
-        <h2 class="text-2xl font-bold text-gray-900">Time C vs. Time D</h2>
-        <p class="text-gray-600 text-lg">Copa do Mundo</p>
-        <p class="text-gray-500 text-sm">Domingo, 29 de Setembro, 19:30h</p>
-      </div>
-      <div class="bg-green-100 text-green-800 text-sm font-semibold px-4 py-2 rounded-full">
-        Finalizado: 3 - 1
-      </div>
+
+    <br/>
+
+    <div className='bg-[#a74e67] p-8 rounded-lg shadow-md col-span-4 col-start-5 flex flex-col justify-center items-center'>
+      <p className='font-sans text-2xl '>JOGO 2</p>
+      <br/>
+      <p>00/00/0000</p>
+      <p>00:00</p>
+      <p>LOCAL</p>
+      <div className='display flex gap-5 mt-4'>   
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+        <p className='text-2xl font-bold mt-20'>X</p>
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+      </div>          
     </div>
-  </main>
+
+    <br/>
+
+    <div className='bg-[#a74e67] p-8 rounded-lg shadow-md col-span-4 col-start-5 flex flex-col justify-center items-center'>
+      <p className='font-sans text-2xl '>JOGO 3</p>
+      <br/>
+      <p>00/00/0000</p>
+      <p>00:00</p>
+      <p>LOCAL</p> 
+      <div className='display flex gap-5 mt-4'>   
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+        <p className='text-2xl font-bold mt-20'>X</p>
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+      </div>          
+    </div>
+
+    <br/>
+
+    <div className='bg-[#a74e67] p-8 rounded-lg shadow-md col-span-4 col-start-5 flex flex-col justify-center items-center'>
+      <p className='font-sans text-2xl '>JOGO 4</p>
+      <br/>
+      <p>00/00/0000</p>
+      <p>00:00</p>
+      <p>LOCAL</p> 
+      <div className='display flex gap-5 mt-4'>   
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+        <p className='text-2xl font-bold mt-20'>X</p>
+        <img src={logo_psg} className='rounded-full' alt="logo psg"/>
+      </div>          
+    </div>
+  </main>    
+  </>
 );
 
 // Componente Principal da Aplicação
