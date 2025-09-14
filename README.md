@@ -1,10 +1,16 @@
 ⚽ Passa a Bola
 Website oficial do coletivo de futebol feminino Passa a Bola.
 
+
+
 📖 Sobre o Projeto
 O "Passa a Bola" é uma plataforma dedicada a unir e empoderar mulheres através do futebol. Este website é o hub oficial do coletivo, onde a comunidade pode acompanhar a agenda de eventos, conhecer nossa história e ficar por dentro das últimas notícias.
 
+
+
 O projeto foi construído como uma Single-Page Application (SPA), garantindo uma navegação fluida e moderna, com um design responsivo que se adapta a qualquer dispositivo.
+
+
 
 ✨ Funcionalidades
 Página Inicial: Boas-vindas ao coletivo, cards de notícias com links rápidos para outras seções.
@@ -17,6 +23,8 @@ Design Responsivo: Layout adaptável para dispositivos móveis e desktops.
 
 Paleta de Cores Única: Um esquema de cores consistente e agradável, aplicado em todas as páginas.
 
+
+
 🚀 Tecnologias Utilizadas
 React: Biblioteca JavaScript para construção da interface de usuário.
 
@@ -25,6 +33,9 @@ Vite: Ferramenta de build para desenvolvimento rápido e otimizado.
 Tailwind CSS: Framework CSS utilitário para estilização e design.
 
 npm: Gerenciador de pacotes do Node.js.
+
+
+
 
 📦 Como Rodar o Projeto
 Para ter uma cópia local do projeto e rodá-la em sua máquina, siga os passos abaixo:
@@ -49,6 +60,9 @@ Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
 npm run dev
 
 Seu projeto estará acessível em http://localhost:5173 (ou em outra porta, caso a 5173 já esteja em uso).
+
+
+
 
 👨‍💻 Time
 Caio Nascimento Caminha
