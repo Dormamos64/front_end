@@ -1,40 +1,58 @@
-# Alterador de Email e Nome
+⚽ Passa a Bola
+Website oficial do coletivo de futebol feminino Passa a Bola.
 
----
+📖 Sobre o Projeto
+O "Passa a Bola" é uma plataforma dedicada a unir e empoderar mulheres através do futebol. Este website é o hub oficial do coletivo, onde a comunidade pode acompanhar a agenda de eventos, conhecer nossa história e ficar por dentro das últimas notícias.
 
-## 💻 Sobre o Projeto
+O projeto foi construído como uma Single-Page Application (SPA), garantindo uma navegação fluida e moderna, com um design responsivo que se adapta a qualquer dispositivo.
 
-Este projeto é uma **ferramenta web** simples e interativa, criada para **demonstrar a atualização de informações de usuário**, como nome de usuário/apelido e endereço de e-mail. A aplicação foi desenvolvida com foco em **manipulação de DOM** e **estilização moderna**, oferecendo uma interface limpa e funcional para simular o processo de edição de dados.
+✨ Funcionalidades
+Página Inicial: Boas-vindas ao coletivo, cards de notícias com links rápidos para outras seções.
 
-## 🚀 Tecnologias Utilizadas
+Sobre Nós: Detalhes sobre a missão, os valores e a jornada do "Passa a Bola".
 
-* **HTML:** Para a estruturação e a semântica do conteúdo da página.
-* **CSS e Tailwind CSS:** Usados para a estilização da interface, proporcionando um design moderno, limpo e responsivo.
-* **JavaScript:** Para a lógica da aplicação, garantindo a interatividade e o tratamento dos dados de entrada do usuário.
-* **Vite:** Essencial para o ambiente de desenvolvimento, oferecendo um servidor rápido e otimizado, além de funcionalidades de `Hot Module Replacement` (HMR).
+Jogos: Tabela completa de partidas e eventos do coletivo, com cards para cada jogo.
 
----
+Design Responsivo: Layout adaptável para dispositivos móveis e desktops.
 
-## ⚙️ Como Executar Localmente
+Paleta de Cores Única: Um esquema de cores consistente e agradável, aplicado em todas as páginas.
 
-Siga os passos abaixo para rodar o projeto na sua máquina:
+🚀 Tecnologias Utilizadas
+React: Biblioteca JavaScript para construção da interface de usuário.
 
-### **Pré-requisitos**
+Vite: Ferramenta de build para desenvolvimento rápido e otimizado.
 
-Certifique-se de que você tem o **Node.js** e o **npm** instalados. Para verificar, use os seguintes comandos no seu terminal:
+Tailwind CSS: Framework CSS utilitário para estilização e design.
 
-```bash
-node -v
-npm -v
+npm: Gerenciador de pacotes do Node.js.
 
-Instruções:
+📦 Como Rodar o Projeto
+Para ter uma cópia local do projeto e rodá-la em sua máquina, siga os passos abaixo:
 
-1 = clone o repositorio
-2 = cd repositorio
-3 = dentro do terminal digite "npm install" para baixar as depêndencias 
-4 = dentro do terminal digite "npm run dev" para iniciar um servidor
+Pré-requisitos
+Certifique-se de ter o Node.js e o npm (ou Yarn) instalados em seu computador.
 
-Feito por:
- Gabriel Amaral
- Gabriel Sakura
- Rafael Tavares.
+Instalação
+Clone este repositório para o seu computador:
+git clone <URL_do_seu_repositorio>
+
+Navegue até a pasta do projeto:
+cd nome-da-pasta-do-projeto
+
+Instale as dependências:
+npm install
+
+Certifique-se de que os arquivos de imagem necessários (.png, .jpg, etc.) estão na pasta public/images para que o site possa acessá-los.
+
+Execução
+Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
+npm run dev
+
+Seu projeto estará acessível em http://localhost:5173 (ou em outra porta, caso a 5173 já esteja em uso).
+
+Time:
+Caio Nascimento Caminha 
+Gabriel Alexandre Fukushima Sakura 
+Gabriel Oliveira Amaral
+Lucas Henrique Viana Estevam Sena
+Rafael Tavares Santos
