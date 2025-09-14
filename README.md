@@ -50,9 +50,13 @@ npm run dev
 
 Seu projeto estará acessível em http://localhost:5173 (ou em outra porta, caso a 5173 já esteja em uso).
 
-Time:
-Caio Nascimento Caminha 
-Gabriel Alexandre Fukushima Sakura 
+👨‍💻 Time
+Caio Nascimento Caminha
+
+Gabriel Alexandre Fukushima Sakura
+
 Gabriel Oliveira Amaral
+
 Lucas Henrique Viana Estevam Sena
+
 Rafael Tavares Santos
