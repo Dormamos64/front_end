@@ -4,7 +4,7 @@ import logo_psg from '../src/images/imagem_psg.png';
 import jogadoras from'./images/jogadora.png';
 import logo from'./images/logo.png';
  
-// Componente para a Página Home
+
 const HomePage = ({ onNavigate }) => (
     <main className="container mx-auto mt-10 px-6 py-10">
         <div className="text-center mb-12">
@@ -18,7 +18,7 @@ const HomePage = ({ onNavigate }) => (
         </div>
 
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Card 1: Notícia com imagem */}
+          
             <div className="bg-[#a74e67] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src={jogadoras} alt="Imagem da notícia" className="w-full h-40 object-cover rounded-lg mb-4" />
                 <h2 className="text-2xl font-bold text-white mb-2">Análise do Jogo de Ontem</h2>
@@ -32,7 +32,7 @@ const HomePage = ({ onNavigate }) => (
                 </button>
             </div>
 
-            {/* Card 2: Sobre a Empresa com imagem */}
+           
             <div className="bg-[#a74e67] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src={jogadoras} alt="Imagem sobre o time" className="w-full h-40 object-cover rounded-lg mb-4" />
                 <h2 className="text-2xl font-bold text-white mb-2">Quem Somos Nós?</h2>
@@ -46,7 +46,7 @@ const HomePage = ({ onNavigate }) => (
                 </button>
             </div>
             
-            {/* Card 3: Próximos Jogos com imagem */}
+        
             <div className="bg-[#a74e67] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 <img src={jogadoras} alt="Imagem da tabela de jogos" className="w-full h-40 object-cover rounded-lg mb-4" />
                 <h2 className="text-2xl font-bold text-white mb-2">Tabela de Jogos</h2>
@@ -65,12 +65,12 @@ const HomePage = ({ onNavigate }) => (
 
 
 
-// Componente para a Página Sobre Nós
+
 const AboutPage = () => (
     <main className="container mx-auto mt-10 px-6 py-10">
         <div className="bg-[#a74e67] p-8 rounded-lg shadow-lg">
 
-            {/* Seção 1: Missão e Introdução */}
+            
             <section className="mb-10 text-center">
                 <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
                     Sobre o <span className="text-[#598819]">Passa a Bola</span>
@@ -82,7 +82,7 @@ const AboutPage = () => (
 
             <hr className="border-gray-300 my-8" />
 
-            {/* Seção 2: Nossa Jornada */}
+            
             <section className="mb-10">
                 <h2 className="text-3xl font-bold text-white mb-4 text-center md:text-left">Nossa Jornada</h2>
                 <div className="md:flex items-center space-y-6 md:space-y-0 md:space-x-8">
@@ -97,7 +97,7 @@ const AboutPage = () => (
 
             <hr className="border-gray-300 my-8" />
 
-            {/* Seção 3: Nossos Valores */}
+            
             <section className="mb-10">
                 <h2 className="text-3xl font-bold text-white mb-6 text-center">O Que Nos Move</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -120,7 +120,7 @@ const AboutPage = () => (
     </main>
 );
 
-// Componente para a Página de Jogos
+
 
 const GamesPage = () => (
     <>
@@ -185,7 +185,7 @@ const GamesPage = () => (
     </>
 );
 
-// Componente Principal da Aplicação
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
@@ -202,7 +202,7 @@ export default function App() {
 
   return (
     <div className="bg-[#598819] font-sans leading-normal tracking-normal min-h-screen flex flex-col">
-      {/* Navbar (componente reutilizável) */}
+      {/* Navbar */}
       <header className="bg-[#5e3b63] shadow-md">
         <nav className="container mx-auto px-6 py-3 flex justify-between items-center">
           <button 
@@ -232,7 +232,7 @@ export default function App() {
       
       {renderPage()}
       
-      {/* Rodapé (componente reutilizável) */}
+      {/* footer */}
       <footer className="bg-[#5e3b63] text-white py-6 mt-auto">
         <div className="container mx-auto px-6 text-center">
           <p>&copy; 2025 Passa a Bola. Todos os direitos reservados.</p>
