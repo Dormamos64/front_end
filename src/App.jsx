@@ -369,7 +369,7 @@ export default function App() {
 
       <footer className="bg-[#5e3b63] text-white py-6 mt-auto shadow-inner">
         <div className="container mx-auto px-6 text-center">
-          <p className="text-sm md:text-base">&copy; 2025 Passa a Bola. Desenvolvido para a disciplina de JavaScript na FIAP.</p>
+          <p className="text-sm md:text-base">&copy; 2025 Passa a Bola. Desenvolvido para a disciplina de Web design na FIAP.</p>
         </div>
       </footer>
     </div>
