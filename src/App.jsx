@@ -48,20 +48,20 @@ const JOGOS_FICTICIOS = [
   },
 ];
 
-const JOGADORAS_IMG_URL = "/images/jogadora.png";
-const SOBRE_IMG_URL = "/images/jogadora.png";
-const TABELA_IMG_URL = "/images/jogadora.png";
+const URL_IMG_JOGADORAS = "/images/jogadora.png";
+const URL_IMG_SOBRE = "/images/imagem_psg.png";
+const URL_IMG_TABELA = "/images/logo.png";
 
 
-const Modal = ({ isOpen, onClose, children, title }) => {
-  if (!isOpen) return null;
+const Modal = ({ estaAberto, aoFechar, children, titulo }) => {
+  if (!estaAberto) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-lg transform transition-all duration-300 scale-100">
         <div className="flex justify-between items-center mb-4 border-b pb-3">
-          <h3 className="text-2xl font-bold text-[#5e3b63]">{title}</h3>
-          <button onClick={onClose} className="p-2 rounded-full text-gray-600 hover:bg-gray-200 transition">
+          <h3 className="text-2xl font-bold text-[#5e3b63]">{titulo}</h3>
+          <button onClick={aoFechar} className="p-2 rounded-full text-gray-600 hover:bg-gray-200 transition">
             <X size={24} />
           </button>
         </div>
@@ -73,7 +73,7 @@ const Modal = ({ isOpen, onClose, children, title }) => {
   );
 };
 
-const HomePage = ({ onNavigate }) => (
+const PaginaInicial = ({ aoNavegar }) => (
   <main className="container mx-auto mt-10 px-4 py-10">
     <div className="text-center mb-12">
       <h1 className="text-5xl md:text-6xl font-extrabold text-white bg-[#5e3b63] p-4 rounded-xl shadow-lg leading-tight mx-auto max-w-4xl">
@@ -87,7 +87,7 @@ const HomePage = ({ onNavigate }) => (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
         <img
-          src={JOGADORAS_IMG_URL}
+          src={URL_IMG_JOGADORAS}
           alt="Análise do Jogo"
           className="w-full h-40 object-cover rounded-lg mb-4"
           onError={(e) => e.currentTarget.src = 'https://placehold.co/600x400/ccc/999?text=Imagem+N%C3%A3o+Encontrada'}
@@ -97,7 +97,7 @@ const HomePage = ({ onNavigate }) => (
           Confira os destaques, estatísticas e a performance da equipe nas últimas partidas.
         </p>
         <button
-          onClick={() => onNavigate('jogos')}
+          onClick={() => aoNavegar('jogos')}
           className="bg-[#598819] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#497016] transition shadow-md">
           Ver Análise &raquo;
         </button>
@@ -105,7 +105,7 @@ const HomePage = ({ onNavigate }) => (
 
       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
         <img
-          src={SOBRE_IMG_URL}
+          src={URL_IMG_SOBRE}
           alt="Sobre o time"
           className="w-full h-40 object-cover rounded-lg mb-4"
           onError={(e) => e.currentTarget.src = 'https://placehold.co/600x400/ccc/999?text=Imagem+N%C3%A3o+Encontrada'}
@@ -115,7 +115,7 @@ const HomePage = ({ onNavigate }) => (
           Nossa missão é usar o esporte para transformar vidas e quebrar barreiras.
         </p>
         <button
-          onClick={() => onNavigate('sobre')}
+          onClick={() => aoNavegar('sobre')}
           className="bg-[#598819] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#497016] transition shadow-md">
           Saber Mais &raquo;
         </button>
@@ -123,7 +123,7 @@ const HomePage = ({ onNavigate }) => (
 
       <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]">
         <img
-          src={TABELA_IMG_URL}
+          src={URL_IMG_TABELA}
           alt="Tabela de jogos"
           className="w-full h-40 object-cover rounded-lg mb-4"
           onError={(e) => e.currentTarget.src = 'https://placehold.co/600x400/ccc/999?text=Imagem+N%C3%A3o+Encontrada'}
@@ -133,7 +133,7 @@ const HomePage = ({ onNavigate }) => (
           Fique por dentro da tabela de jogos, horários e locais. Não perca nenhum lance!
         </p>
         <button
-          onClick={() => onNavigate('jogos')}
+          onClick={() => aoNavegar('jogos')}
           className="bg-[#598819] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#497016] transition shadow-md">
           Ver Tabela &raquo;
         </button>
@@ -142,7 +142,7 @@ const HomePage = ({ onNavigate }) => (
   </main>
 );
 
-const AboutPage = () => (
+const PaginaSobre = () => (
   <main className="container mx-auto mt-10 px-4 py-10">
     <div className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
       <section className="mb-10 text-center">
@@ -170,9 +170,9 @@ const AboutPage = () => (
         <div className="bg-gray-50 p-6 rounded-xl shadow-inner">
           <h2 className="text-3xl font-bold text-[#5e3b63] mb-6 text-center">O Que Nos Move</h2>
           <div className="space-y-4">
-            <FeatureCard icon={Users} title="Comunidade" description="Construímos uma rede de apoio mútua, dentro e fora de campo." />
-            <FeatureCard icon={Shield} title="Empoderamento" description="Encorajamos cada mulher a descobrir sua força e sua voz através do esporte." />
-            <FeatureCard icon={Grid} title="Respeito" description="Promovemos um ambiente de inclusão, onde a diversidade é celebrada." />
+            <CardVantagem icone={Users} titulo="Comunidade" descricao="Construímos uma rede de apoio mútua, dentro e fora de campo." />
+            <CardVantagem icone={Shield} titulo="Empoderamento" descricao="Encorajamos cada mulher a descobrir sua força e sua voz através do esporte." />
+            <CardVantagem icone={Grid} titulo="Respeito" descricao="Promovemos um ambiente de inclusão, onde a diversidade é celebrada." />
           </div>
         </div>
       </section>
@@ -180,20 +180,20 @@ const AboutPage = () => (
   </main>
 );
 
-const FeatureCard = ({ icon: Icon, title, description }) => (
+const CardVantagem = ({ icone: Icone, titulo, descricao }) => (
   <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
-    <Icon size={24} className="text-[#598819] mr-4 mt-1 flex-shrink-0" />
+    <Icone size={24} className="text-[#598819] mr-4 mt-1 flex-shrink-0" />
     <div>
-      <h3 className="text-xl font-semibold text-[#5e3b63] mb-1">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <h3 className="text-xl font-semibold text-[#5e3b63] mb-1">{titulo}</h3>
+      <p className="text-gray-600 text-sm">{descricao}</p>
     </div>
   </div>
 );
 
-const GameCard = ({ jogo, onOpenModal }) => (
+const CardJogo = ({ jogo, aoAbrirModal }) => (
   <div
     className='bg-[#a74e67] p-8 rounded-xl shadow-lg my-4 flex flex-col justify-center items-center w-full transform transition-all duration-300 hover:scale-[1.02] cursor-pointer'
-    onClick={() => onOpenModal(jogo)}
+    onClick={() => aoAbrirModal(jogo)}
   >
     <p className='font-sans text-3xl text-white font-bold mb-4 text-center'>{jogo.nome}</p>
 
@@ -227,19 +227,19 @@ const GameCard = ({ jogo, onOpenModal }) => (
   </div>
 );
 
-const GamesPage = () => {
+const PaginaJogos = () => {
   const [jogos] = useState(JOGOS_FICTICIOS);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedGame, setSelectedGame] = useState(null);
+  const [modalEstaAberto, setModalEstaAberto] = useState(false);
+  const [jogoSelecionado, setJogoSelecionado] = useState(null);
 
-  const handleOpenModal = (jogo) => {
-    setSelectedGame(jogo);
-    setIsModalOpen(true);
+  const abrirModal = (jogo) => {
+    setJogoSelecionado(jogo);
+    setModalEstaAberto(true);
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedGame(null);
+  const fecharModal = () => {
+    setModalEstaAberto(false);
+    setJogoSelecionado(null);
   };
 
   return (
@@ -253,28 +253,28 @@ const GamesPage = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl w-full">
           {jogos.map(jogo => (
-            <GameCard
+            <CardJogo
               key={jogo.id}
               jogo={jogo}
-              onOpenModal={handleOpenModal}
+              aoAbrirModal={abrirModal}
             />
           ))}
         </div>
 
         <Modal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          title={selectedGame ? `Detalhes: ${selectedGame.nome}` : "Detalhes do Jogo"}
+          estaAberto={modalEstaAberto}
+          aoFechar={fecharModal}
+          titulo={jogoSelecionado ? `Detalhes: ${jogoSelecionado.nome}` : "Detalhes do Jogo"}
         >
-          {selectedGame && (
+          {jogoSelecionado && (
             <div className='text-gray-700 space-y-3'>
-              <p><strong>Time da Casa:</strong> {selectedGame.timeCasa}</p>
-              <p><strong>Time Visitante:</strong> {selectedGame.timeFora}</p>
-              <p><strong>Data:</strong> {selectedGame.data}</p>
-              <p><strong>Hora:</strong> {selectedGame.hora}</p>
-              <p><strong>Local:</strong> {selectedGame.local}</p>
+              <p><strong>Time da Casa:</strong> {jogoSelecionado.timeCasa}</p>
+              <p><strong>Time Visitante:</strong> {jogoSelecionado.timeFora}</p>
+              <p><strong>Data:</strong> {jogoSelecionado.data}</p>
+              <p><strong>Hora:</strong> {jogoSelecionado.hora}</p>
+              <p><strong>Local:</strong> {jogoSelecionado.local}</p>
               <button
-                onClick={handleCloseModal}
+                onClick={fecharModal}
                 className="mt-4 w-full bg-[#5e3b63] text-white py-2 rounded-lg font-semibold hover:bg-[#4d2f52] transition"
               >
                 Fechar
@@ -288,18 +288,18 @@ const GamesPage = () => {
 };
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [isGamesDropdownOpen, setIsGamesDropdownOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [paginaAtual, setPaginaAtual] = useState('home');
+  const [dropdownJogosEstaAberto, setDropdownJogosEstaAberto] = useState(false);
+  const [menuMobileEstaAberto, setMenuMobileEstaAberto] = useState(false);
 
-  const renderPage = () => {
-    switch (currentPage) {
+  const renderizarPagina = () => {
+    switch (paginaAtual) {
       case 'home':
-        return <HomePage onNavigate={setCurrentPage} />;
+        return <PaginaInicial aoNavegar={setPaginaAtual} />;
       case 'sobre':
-        return <AboutPage />;
+        return <PaginaSobre />;
       case 'jogos':
-        return <GamesPage />;
+        return <PaginaJogos />;
       default:
         return <div className="p-10 text-center text-gray-800 text-3xl">Página não encontrada!</div>;
     }
@@ -310,45 +310,45 @@ export default function App() {
       <header className="bg-[#5e3b63] shadow-xl sticky top-0 z-40">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <button
-            onClick={() => setCurrentPage('home')}
+            onClick={() => setPaginaAtual('home')}
             className="text-2xl md:text-3xl font-extrabold text-white focus:outline-none">
             Passa a Bola
           </button>
 
           <button
             className="md:hidden text-white p-2 rounded-lg hover:bg-[#4d2f52] transition"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            onClick={() => setMenuMobileEstaAberto(!menuMobileEstaAberto)}>
+            {menuMobileEstaAberto ? <X size={28} /> : <Menu size={28} />}
           </button>
 
           <div className="hidden md:flex space-x-8 items-center">
-            <NavLink name="Início" page="home" currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <NavLink name="Sobre Nós" page="sobre" currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <LinkNavegacao nome="Início" pagina="home" paginaAtual={paginaAtual} setPaginaAtual={setPaginaAtual} />
+            <LinkNavegacao nome="Sobre Nós" pagina="sobre" paginaAtual={paginaAtual} setPaginaAtual={setPaginaAtual} />
 
             <div className="relative">
               <button
-                onMouseEnter={() => setIsGamesDropdownOpen(true)}
-                onMouseLeave={() => setIsGamesDropdownOpen(false)}
-                onClick={() => { setCurrentPage('jogos'); setIsGamesDropdownOpen(false); }}
-                className={`text-white py-2 px-3 flex items-center hover:bg-[#4d2f52] rounded-lg transition ${currentPage === 'jogos' ? 'font-semibold bg-[#4d2f52]' : ''}`}
+                onMouseEnter={() => setDropdownJogosEstaAberto(true)}
+                onMouseLeave={() => setDropdownJogosEstaAberto(false)}
+                onClick={() => { setPaginaAtual('jogos'); setDropdownJogosEstaAberto(false); }}
+                className={`text-white py-2 px-3 flex items-center hover:bg-[#4d2f52] rounded-lg transition ${paginaAtual === 'jogos' ? 'font-semibold bg-[#4d2f52]' : ''}`}
               >
                 Jogos
-                {isGamesDropdownOpen ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
+                {dropdownJogosEstaAberto ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
               </button>
 
-              {isGamesDropdownOpen && (
+              {dropdownJogosEstaAberto && (
                 <div
-                  onMouseEnter={() => setIsGamesDropdownOpen(true)}
-                  onMouseLeave={() => setIsGamesDropdownOpen(false)}
+                  onMouseEnter={() => setDropdownJogosEstaAberto(true)}
+                  onMouseLeave={() => setDropdownJogosEstaAberto(false)}
                   className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl overflow-hidden z-10"
                 >
-                  <DropdownItem
-                    name="Tabela de Jogos"
-                    onClick={() => { setCurrentPage('jogos'); setIsGamesDropdownOpen(false); }}
+                  <ItemDropdown
+                    nome="Tabela de Jogos"
+                    onClick={() => { setPaginaAtual('jogos'); setDropdownJogosEstaAberto(false); }}
                   />
-                  <DropdownItem
-                    name="Próximos Treinos"
-                    onClick={() => { setCurrentPage('jogos'); setIsGamesDropdownOpen(false); }}
+                  <ItemDropdown
+                    nome="Próximos Treinos"
+                    onClick={() => { setPaginaAtual('jogos'); setDropdownJogosEstaAberto(false); }}
                   />
                 </div>
               )}
@@ -356,16 +356,16 @@ export default function App() {
           </div>
         </nav>
 
-        {isMobileMenuOpen && (
+        {menuMobileEstaAberto && (
           <div className="md:hidden bg-[#4d2f52] pb-2 px-6 transition-all duration-300">
-            <MobileNavLink name="Início" page="home" currentPage={currentPage} setCurrentPage={setCurrentPage} setIsMobileMenuOpen={setIsMobileMenuOpen} />
-            <MobileNavLink name="Sobre Nós" page="sobre" currentPage={currentPage} setCurrentPage={setCurrentPage} setIsMobileMenuOpen={setIsMobileMenuOpen} />
-            <MobileNavLink name="Jogos" page="jogos" currentPage={currentPage} setCurrentPage={setCurrentPage} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+            <LinkNavegacaoMobile nome="Início" pagina="home" paginaAtual={paginaAtual} setPaginaAtual={setPaginaAtual} setMenuMobileEstaAberto={setMenuMobileEstaAberto} />
+            <LinkNavegacaoMobile nome="Sobre Nós" pagina="sobre" paginaAtual={paginaAtual} setPaginaAtual={setPaginaAtual} setMenuMobileEstaAberto={setMenuMobileEstaAberto} />
+            <LinkNavegacaoMobile nome="Jogos" pagina="jogos" paginaAtual={paginaAtual} setPaginaAtual={setPaginaAtual} setMenuMobileEstaAberto={setMenuMobileEstaAberto} />
           </div>
         )}
       </header>
 
-      {renderPage()}
+      {renderizarPagina()}
 
       <footer className="bg-[#5e3b63] text-white py-6 mt-auto shadow-inner">
         <div className="container mx-auto px-6 text-center">
@@ -376,31 +376,31 @@ export default function App() {
   );
 }
 
-const NavLink = ({ name, page, currentPage, setCurrentPage }) => (
+const LinkNavegacao = ({ nome, pagina, paginaAtual, setPaginaAtual }) => (
   <button
-    onClick={() => setCurrentPage(page)}
-    className={`text-white text-lg py-1 hover:text-gray-200 transition border-b-2 focus:outline-none ${currentPage === page ? 'border-[#598819] font-semibold' : 'border-transparent hover:border-white'}`}
+    onClick={() => setPaginaAtual(pagina)}
+    className={`text-white text-lg py-1 hover:text-gray-200 transition border-b-2 focus:outline-none ${paginaAtual === pagina ? 'border-[#598819] font-semibold' : 'border-transparent hover:border-white'}`}
   >
-    {name}
+    {nome}
   </button>
 );
 
-const MobileNavLink = ({ name, page, currentPage, setCurrentPage, setIsMobileMenuOpen }) => (
+const LinkNavegacaoMobile = ({ nome, pagina, paginaAtual, setPaginaAtual, setMenuMobileEstaAberto }) => (
   <button
-    onClick={() => { setCurrentPage(page); setIsMobileMenuOpen(false); }}
-    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition ${currentPage === page ? 'bg-[#598819] text-white' : 'text-gray-200 hover:bg-[#5e3b63] hover:text-white'}`}
+    onClick={() => { setPaginaAtual(pagina); setMenuMobileEstaAberto(false); }}
+    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition ${paginaAtual === pagina ? 'bg-[#598819] text-white' : 'text-gray-200 hover:bg-[#5e3b63] hover:text-white'}`}
   >
-    {name}
+    {nome}
   </button>
 );
 
-const DropdownItem = ({ name, onClick }) => (
+const ItemDropdown = ({ nome, onClick }) => (
   <a
     href="#"
     onClick={(e) => { e.preventDefault(); onClick(); }}
     className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition"
   >
-    {name}
+    {nome}
   </a>
 );
 
