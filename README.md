@@ -50,7 +50,7 @@ Instalação
 
 Clone este repositório para o seu computador:
 
-git clone https://URL_DO_SEU_REPOSITORIO.git
+git clone https://github.com/Dormamos64/front_end.git
 
 
 Navegue até à pasta do projeto:
